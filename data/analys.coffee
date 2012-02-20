@@ -16,9 +16,9 @@ numChapters = 0
 
 for book, i in bible.books
   lengths = []
-  chapterText = ''
   numChapters += book.chapters.length
   for chapter in book.chapters
+    chapterText = ''
     for verse in chapter.verses
       verse = verse.text if verse.text
       chapterText += verse
