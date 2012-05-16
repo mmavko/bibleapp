@@ -9,7 +9,7 @@ port = process.argv[2] or 8888
 
 
 bookKeys = ["gen","ex","lev","num","deut","josh","judg","ruth","1sam","2sam","1kings","2kings","1chron","2chron","ezra","neh","esther","job","ps","prov","eccles","song","is","jer","lam","ezek","dan","hos","joel","amos","obad","jon","mic","nahum","hab","zeph","hag","zech","mal","mt","mk","lk","jn","acts","rom","1cor","2cor","gal","eph","phil","col","1thess","2thess","1tim","2tim","tit","philem","heb","jas","1pet","2pet","1jn","2jn","3jn","jude","rev"]
-{books} = JSON.parse fs.readFileSync('source/bible.json', 'utf8')
+{books} = JSON.parse fs.readFileSync('data/bible.json', 'utf8')
 
 
 http.createServer( (request, response) ->

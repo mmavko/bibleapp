@@ -1,0 +1,6 @@
+I have {{friends.length}} friends. They are:
+<ul>
+    <li ng:repeat="friend in friends" ng:eval="log('include')">
+    [{{$index + 1}}] {{friend.name}} who is {{friend.age}} years old.
+  </li>
+</ul>
