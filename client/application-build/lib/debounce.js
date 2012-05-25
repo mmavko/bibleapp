@@ -1,0 +1,1 @@
+Function.prototype.debounce=function(a,b){var c=this,d;return function(){function h(){b||c.apply(f,g),d=null}var f=this,g=arguments;d?clearTimeout(d):b&&c.apply(f,g),d=setTimeout(h,a||100)}}

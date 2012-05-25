@@ -1,0 +1,1 @@
+(function(a,b){b=a({}),a.subscribe=function(a,c){b.on.call(b,a,c)},a.unsubscribe=function(a,c){b.off.call(b,a,c)},a.publish=function(a,c){b.trigger.call(b,a,c)}})(jQuery)
