@@ -13,12 +13,24 @@
 
 <ul>
 <li><code>server/data_loaded</code> -- displays (replaces/appends/prepends) data depending on inner flags</li>
-</ul>             </td>             <td class="code">               <div class="highlight"><pre><span class="nx">define</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="nx">Book</span>
+</ul>             </td>             <td class="code">               <div class="highlight"><pre><span class="nx">define</span> <span class="p">[</span>
+    <span class="s">&#39;cs!lib/controller&#39;</span>
+    <span class="s">&#39;text!./template.micro&#39;</span>
+    <span class="s">&#39;text!./verses.micro&#39;</span>
+  <span class="p">],</span> <span class="nf">(Controller, mainTmpl, versesTmpl) -&gt;</span>
+  
+    <span class="k">class</span> <span class="nx">Book</span> <span class="k">extends</span> <span class="nx">Controller</span>
+      <span class="nv">elements:</span>
+        <span class="nv">versesEl: </span><span class="s">&#39;.verses&#39;</span>
 
-<span class="k">class</span> <span class="nx">Book</span>
-  <span class="nv">init: </span><span class="nf">(parent_el) -&gt;</span>
-    <span class="nx">$</span><span class="p">.</span><span class="nx">subscribe</span> <span class="s">&#39;server/data_loaded&#39;</span><span class="p">,</span> <span class="nx">@data_loaded</span>
-  <span class="nv">data_loaded: </span><span class="nf">(ev, data) -&gt;</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s">&quot;book got </span><span class="si">#{</span><span class="nx">data</span><span class="p">.</span><span class="nx">verses</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span><span class="s"> verses&quot;</span>
+      <span class="nv">init: </span><span class="o">=&gt;</span>
+        <span class="vi">@mainTmpl = </span><span class="nx">tmpl</span> <span class="nx">mainTmpl</span>
+        <span class="vi">@versesTmpl = </span><span class="nx">tmpl</span> <span class="nx">versesTmpl</span>
+        <span class="nx">@el</span><span class="p">.</span><span class="nx">html</span> <span class="nx">@mainTmpl</span> <span class="p">{}</span>
+        <span class="nx">@refreshElements</span><span class="p">()</span>
+        <span class="nx">$</span><span class="p">.</span><span class="nx">subscribe</span> <span class="s">&#39;server/data_loaded&#39;</span><span class="p">,</span> <span class="nx">@data_loaded</span>
+
+      <span class="nv">data_loaded: </span><span class="p">(</span><span class="nx">ev</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span>
+        <span class="nx">@versesEl</span><span class="p">.</span><span class="nx">html</span> <span class="nx">@versesTmpl</span> <span class="nx">data</span>
 
 </pre></div>             </td>           </tr>                </tbody>     </table>   </div> </body> </html> 

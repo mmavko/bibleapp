@@ -1,0 +1,33 @@
+body {
+  color: #555;
+  background-color: #ffe;
+}
+#book {
+  width: 350px;
+  margin: 0 auto;
+  padding: 0 10px;
+  border: 1px solid #aaa;
+  border-width: 0 1px;
+}
+#book h2 {
+  text-align: center;
+}
+#book .c {
+  float: left;
+  margin-left: 5px;
+  margin-right: 10px;
+  font-size: 36px;
+  line-height: 36px;
+  font-weight: bold;
+}
+#book .v .n {
+  margin: 0 8px;
+  position: relative;
+  top: -3px;
+  font-size: 70%;
+  font-style: italic;
+  font-family: sans-serif;
+}
+#book .c + .v .n {
+  display: none;
+}

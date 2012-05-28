@@ -4,11 +4,13 @@
 # Fires 'page/loaded' event.
 
 define [
-    'cs!app/book'
+    'cs!app/book/book'
     'cs!app/toc'
     'cs!app/server'
   ], 
-  (book, toc, server) ->
+  (Book, TOC, Server) ->
     run: ->
-      book.init $ '#book'
+      book = new Book $ '#book'
+      server = new Server
+      book.init()
       server.init()

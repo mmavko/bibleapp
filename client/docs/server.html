@@ -19,17 +19,19 @@ It also:</p>
 <li><code>toc/goto_verse</code> -- fires <code>data_loaded</code></li>
 <li><code>book/top_reached</code> -- fires <code>data_loaded</code></li>
 <li><code>book/bottom_reached</code> -- fires <code>data_loaded</code></li>
-</ul>             </td>             <td class="code">               <div class="highlight"><pre><span class="nx">define</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="nx">Server</span>
+</ul>             </td>             <td class="code">               <div class="highlight"><pre><span class="nx">define</span> <span class="o">-&gt;</span>
 
-<span class="k">class</span> <span class="nx">Server</span>
-  <span class="nv">init: </span><span class="o">-&gt;</span>
-    <span class="nv">data = </span><span class="p">[]</span>
-    <span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">..</span><span class="mi">100</span><span class="p">]</span>
-      <span class="nx">data</span><span class="p">.</span><span class="nx">push</span>
-        <span class="nv">b: </span><span class="s">&#39;gen&#39;</span>
-        <span class="nv">c: </span><span class="mi">1</span>
-        <span class="nv">v: </span><span class="nx">i</span>
-        <span class="nv">t: </span><span class="s">&quot;Verse text for verse number </span><span class="si">#{</span><span class="nx">i</span><span class="si">}</span><span class="s"> of book &#39;gen1&#39;.&quot;</span>
-    <span class="nx">$</span><span class="p">.</span><span class="nx">publish</span> <span class="s">&#39;server/data_loaded&#39;</span><span class="p">,</span> <span class="nv">verses: </span><span class="nx">data</span>
+  <span class="k">class</span> <span class="nx">Server</span>
+    <span class="nv">init: </span><span class="o">-&gt;</span>
+      <span class="nv">verses = </span><span class="p">[]</span>
+      <span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">..</span><span class="mi">100</span><span class="p">]</span>
+        <span class="nx">verses</span><span class="p">.</span><span class="nx">push</span>
+          <span class="nv">b: </span><span class="s">&#39;gen&#39;</span>
+          <span class="nv">c: </span><span class="mi">1</span>
+          <span class="nv">v: </span><span class="nx">i</span>
+          <span class="nv">t: </span><span class="s">&quot;Verse text for verse number </span><span class="si">#{</span><span class="nx">i</span><span class="si">}</span><span class="s"> of book &#39;gen1&#39; and some more text.&quot;</span>
+      <span class="nv">data =</span>
+        <span class="nv">verses: </span><span class="nx">verses</span>
+      <span class="nx">$</span><span class="p">.</span><span class="nx">publish</span> <span class="s">&#39;server/data_loaded&#39;</span><span class="p">,</span> <span class="nx">data</span>
 
 </pre></div>             </td>           </tr>                </tbody>     </table>   </div> </body> </html> 

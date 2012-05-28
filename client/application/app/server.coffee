@@ -17,15 +17,17 @@
 #   - `book/bottom_reached` -- fires `data_loaded`
 
 
-define -> new Server
+define ->
 
-class Server
-  init: ->
-    data = []
-    for i in [1..100]
-      data.push
-        b: 'gen'
-        c: 1
-        v: i
-        t: "Verse text for verse number #{i} of book 'gen1'."
-    $.publish 'server/data_loaded', verses: data
+  class Server
+    init: ->
+      verses = []
+      for i in [1..100]
+        verses.push
+          b: 'gen'
+          c: 1
+          v: i
+          t: "Verse text for verse number #{i} of book 'gen1' and some more text."
+      data =
+        verses: verses
+      $.publish 'server/data_loaded', data

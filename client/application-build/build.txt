@@ -1,8 +1,26 @@
 
+app/book/style.css
+----------------
+app/book/style.css
+
+styles/main.css
+----------------
+styles/main.css
+
+styles/style.css
+----------------
+styles/main.css
+styles/../app/book/style.css
+styles/style.css
+
 scripts/main.js
 ----------------
 scripts/csBuild.js
-cs!app/book
+cs!lib/controller
+scripts/text.js
+text!app/book/template.micro
+text!app/book/verses.micro
+cs!app/book/book
 cs!app/toc
 cs!app/server
 cs!app/index

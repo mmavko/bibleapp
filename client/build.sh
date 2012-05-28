@@ -6,4 +6,4 @@ node tools/r.js -o build-profile.js
 
 echo 'Generating documents...'
 rm -rf docs
-docco application/app/*
+docco application/app/*.coffee application/app/book/*.coffee 

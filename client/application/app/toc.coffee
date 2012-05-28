@@ -12,6 +12,4 @@
 #   - `page/loaded` -- fires `goto_verse` for default chapter
 
 
-define -> new TOC
-
-class TOC
+define -> class TOC
