@@ -1,5 +1,11 @@
 
 #book {
+  width: 100%;
+  
+  position: fixed;
+  overflow-y: scroll;
+}
+#book .verses {
   width: 350px;
   margin: 0 auto;
   padding: 0 10px;
@@ -16,6 +22,9 @@
   font-size: 36px;
   line-height: 36px;
   font-weight: bold;
+}
+#book .c, #book .c + .v {
+  margin-top: 20px;
 }
 #book .v .n {
   margin: 0 8px;

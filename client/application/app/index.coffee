@@ -14,3 +14,4 @@ define [
       server = new Server
       book.init()
       server.init()
+      $.publish 'toc/goto_verse'

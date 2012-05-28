@@ -1,17 +1,49 @@
 <!DOCTYPE html>  <html> <head>   <title>server.coffee</title>   <meta http-equiv="content-type" content="text/html; charset=UTF-8">   <link rel="stylesheet" media="all" href="docco.css" /> </head> <body>   <div id="container">     <div id="background"></div>            <div id="jump_to">         Jump To &hellip;         <div id="jump_wrapper">           <div id="jump_page">                                           <a class="source" href="book.html">                 book.coffee               </a>                                           <a class="source" href="index.html">                 index.coffee               </a>                                           <a class="source" href="server.html">                 server.coffee               </a>                                           <a class="source" href="toc.html">                 toc.coffee               </a>                        </div>         </div>       </div>          <table cellpadding="0" cellspacing="0">       <thead>         <tr>           <th class="docs">             <h1>               server.coffee             </h1>           </th>           <th class="code">           </th>         </tr>       </thead>       <tbody>                               <tr id="section-1">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-1">&#182;</a>               </div>                            </td>             <td class="code">               <div class="highlight"><pre></pre></div>             </td>           </tr>                               <tr id="section-2">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-2">&#182;</a>               </div>               <h2>Server</h2>
 
 <p>Server component is responsible for communication with server.
-It also:</p>
+It works with concept of 'target verse'. For example, it can use API
+with following request object:</p>
 
-<ul>
-<li>guarantees the correct AJAX order</li>
-</ul>
+<pre><code>{
+  target: 'john 1:1',
+  start: 100,
+  end: 500
+}
+</code></pre>
+
+<p>This is going to return an array of 'verses' starting at 100 and ending with 500 relatively
+to 'john 1:1' (which has index of 0). If response array contains target verse that verse 
+should contain 'target' attribute.
+Negative values should also be supported.</p>
+
+<p>Example of 'verse' structure:</p>
+
+<pre><code>{
+  b: 'john',                 // book - required only if v==1
+  c: 1,                      // capter - required only if v==1
+  v: 1,                      // verse number
+  t: 'In the beginning...',  // text
+  target: true               // if target verse
+}
+</code></pre>
+
+<p>The component also guarantees the correct AJAX order.</p>
 
 <p>Fires following events:</p>
 
 <ul>
 <li><code>server/data_loaded</code> -- contains loaded data and meta-data about event cause</li>
 </ul>
+
+<p><code>server/data_loaded</code> event carries the following data object:</p>
+
+<pre><code>{
+  verses: [],     // array of verses returned by server API
+  reload: true,   // if we get new data
+  append: true,   // if we get continuation at the end
+  prepend: true   // if we get continuation at the beginning
+}
+</code></pre>
 
 <p>Listens to:</p>
 
@@ -22,16 +54,39 @@ It also:</p>
 </ul>             </td>             <td class="code">               <div class="highlight"><pre><span class="nx">define</span> <span class="o">-&gt;</span>
 
   <span class="k">class</span> <span class="nx">Server</span>
+    
     <span class="nv">init: </span><span class="o">-&gt;</span>
+      <span class="nx">$</span><span class="p">.</span><span class="nx">subscribe</span> <span class="s">&#39;toc/goto_verse&#39;</span><span class="p">,</span> <span class="nx">@tocGotoVerse</span>
+      <span class="nx">$</span><span class="p">.</span><span class="nx">subscribe</span> <span class="s">&#39;book/top_reached&#39;</span><span class="p">,</span> <span class="nx">@bookTopReached</span>
+      <span class="nx">$</span><span class="p">.</span><span class="nx">subscribe</span> <span class="s">&#39;book/bottom_reached&#39;</span><span class="p">,</span> <span class="nx">@bookBottomReached</span>
+    
+    <span class="nv">_getTestData: </span><span class="nf">(number=100, book=&#39;gen&#39;, chapter=1) -&gt;</span>
       <span class="nv">verses = </span><span class="p">[]</span>
-      <span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">..</span><span class="mi">100</span><span class="p">]</span>
+      <span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">..</span><span class="nx">number</span><span class="p">]</span>
         <span class="nx">verses</span><span class="p">.</span><span class="nx">push</span>
-          <span class="nv">b: </span><span class="s">&#39;gen&#39;</span>
-          <span class="nv">c: </span><span class="mi">1</span>
+          <span class="nv">b: </span><span class="nx">book</span>
+          <span class="nv">c: </span><span class="nx">chapter</span>
           <span class="nv">v: </span><span class="nx">i</span>
-          <span class="nv">t: </span><span class="s">&quot;Verse text for verse number </span><span class="si">#{</span><span class="nx">i</span><span class="si">}</span><span class="s"> of book &#39;gen1&#39; and some more text.&quot;</span>
+          <span class="nv">t: </span><span class="s">&quot;Verse text for verse number </span><span class="si">#{</span><span class="nx">i</span><span class="si">}</span><span class="s"> of book &#39;</span><span class="si">#{</span><span class="nx">book</span><span class="si">}#{</span><span class="nx">chapter</span><span class="si">}</span><span class="s">&#39; and some more text.&quot;</span>
+      <span class="nx">verses</span>
+    
+    <span class="nv">tocGotoVerse: </span><span class="o">=&gt;</span>
       <span class="nv">data =</span>
-        <span class="nv">verses: </span><span class="nx">verses</span>
+        <span class="nv">verses: </span><span class="nx">@_getTestData</span> <span class="mi">100</span>
+        <span class="nv">reload: </span><span class="kc">yes</span>
+      <span class="nx">data</span><span class="p">.</span><span class="nx">verses</span><span class="p">[</span><span class="mi">39</span><span class="p">].</span><span class="nv">target = </span><span class="kc">yes</span>
+      <span class="nx">$</span><span class="p">.</span><span class="nx">publish</span> <span class="s">&#39;server/data_loaded&#39;</span><span class="p">,</span> <span class="nx">data</span>
+    
+    <span class="nv">bookTopReached: </span><span class="o">=&gt;</span>
+      <span class="nv">data =</span>
+        <span class="nv">verses: </span><span class="nx">@_getTestData</span> <span class="mi">100</span>
+        <span class="nv">prepend: </span><span class="kc">yes</span>
+      <span class="nx">$</span><span class="p">.</span><span class="nx">publish</span> <span class="s">&#39;server/data_loaded&#39;</span><span class="p">,</span> <span class="nx">data</span>
+    
+    <span class="nv">bookBottomReached: </span><span class="o">=&gt;</span>
+      <span class="nv">data =</span>
+        <span class="nv">verses: </span><span class="nx">@_getTestData</span> <span class="mi">100</span>
+        <span class="nv">append: </span><span class="kc">yes</span>
       <span class="nx">$</span><span class="p">.</span><span class="nx">publish</span> <span class="s">&#39;server/data_loaded&#39;</span><span class="p">,</span> <span class="nx">data</span>
 
 </pre></div>             </td>           </tr>                </tbody>     </table>   </div> </body> </html> 

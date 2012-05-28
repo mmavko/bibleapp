@@ -1,5 +1,8 @@
 <% for (var i=0; i<verses.length; i++) { %>
   <% var verse = verses[i]; %>
+  <% if (verse.target) { %>
+    <div class="target"></div>
+  <% } %>
   <% if (verse.v === 1) { %>
     <div class="c"><%= verse.c %></div>
   <% } %>
