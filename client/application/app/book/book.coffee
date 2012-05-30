@@ -20,8 +20,8 @@ define [
   
     class Book extends Controller
       
-      tagetTopOffset: 20
-      loadMargin: 600
+      TARGET_TOP_OFFSET: 20
+      LOAD_MARGIN: 600
       
       elements:
         versesEl: '.verses'
@@ -31,7 +31,7 @@ define [
         @el.height window.innerHeight
       
       _scrollToTarget: ->
-        @el.scrollTop @el.scrollTop()+@targetEl.position().top-@tagetTopOffset
+        @el.scrollTop @el.scrollTop() + @targetEl.position().top - @TARGET_TOP_OFFSET
       
       _measureTopScrollSpace: ->
         @el.scrollTop()
@@ -50,8 +50,8 @@ define [
         $.subscribe 'server/data_loaded', @data_loaded
       
       onScroll: =>
-        $.publish 'book/top_reached'    if @_measureTopScrollSpace()    < @loadMargin
-        $.publish 'book/bottom_reached' if @_measureBottomScrollSpace() < @loadMargin
+        $.publish 'book/top_reached'    if @_measureTopScrollSpace()    < @LOAD_MARGIN
+        $.publish 'book/bottom_reached' if @_measureBottomScrollSpace() < @LOAD_MARGIN
       
       data_loaded: (ev, data) =>
         if data.reload

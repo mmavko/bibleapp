@@ -1,0 +1,398 @@
+{
+    "gen": {
+        "en_short": "Gen",
+        "en_long": "Genesis",
+        "ua_full": "<span>Перша книга Мойсеєва:</span> Буття",
+        "ua_short": "1 М."
+    },
+    "exod": {
+        "en_short": "Exod",
+        "en_long": "Exodus",
+        "ua_full": "<span>Друга книга Мойсеєва:</span> Вихід",
+        "ua_short": "2 М."
+    },
+    "lev": {
+        "en_short": "Lev",
+        "en_long": "Leviticus",
+        "ua_full": "<span>Третя книга Мойсеєва:</span> Левіт",
+        "ua_short": "З М."
+    },
+    "num": {
+        "en_short": "Num",
+        "en_long": "Numbers",
+        "ua_full": "<span>Четверта книга Мойсеєва:</span> Числа",
+        "ua_short": "4 М."
+    },
+    "deut": {
+        "en_short": "Deut",
+        "en_long": "Deuteronomy",
+        "ua_full": "<span>П'ята книга Мойсеєва:</span> Повторення Закону",
+        "ua_short": "5 М."
+    },
+    "josh": {
+        "en_short": "Josh",
+        "en_long": "Joshua",
+        "ua_full": "Книга Ісуса Навина <span>(книга Єгошуї)</span>",
+        "ua_short": "Єг."
+    },
+    "judg": {
+        "en_short": "Judg",
+        "en_long": "Judges",
+        "ua_full": "Книга Суддів",
+        "ua_short": "Суд."
+    },
+    "ruth": {
+        "en_short": "Ruth",
+        "en_long": "Ruth",
+        "ua_full": "Книга Рути",
+        "ua_short": "Рут"
+    },
+    "1sam": {
+        "en_short": "1 Sam",
+        "en_long": "1 Samuel",
+        "ua_full": "Перша книга Самуїла <span>(або Перша книга царів)</span>",
+        "ua_short": "1 Сам."
+    },
+    "2sam": {
+        "en_short": "2 Sam",
+        "en_long": "2 Samuel",
+        "ua_full": "Друга книга Самуїла <span>(або Друга книга царів)</span>",
+        "ua_short": "2 Сам."
+    },
+    "1kgs": {
+        "en_short": "1 Kgs",
+        "en_long": "1 Kings",
+        "ua_full": "Перша книга царів",
+        "ua_short": "1 Цар."
+    },
+    "2kgs": {
+        "en_short": "2 Kgs",
+        "en_long": "2 Kings",
+        "ua_full": "Друга книга царів",
+        "ua_short": "2 Цар."
+    },
+    "1chr": {
+        "en_short": "1 Chr",
+        "en_long": "1 Chronicles",
+        "ua_full": "Перша книга хроніки",
+        "ua_short": "1 Хр."
+    },
+    "2chr": {
+        "en_short": "2 Chr",
+        "en_long": "2 Chronicles",
+        "ua_full": "Друга книга хроніки",
+        "ua_short": "2 Хр."
+    },
+    "ezra": {
+        "en_short": "Ezra",
+        "en_long": "Ezra",
+        "ua_full": "Книга Езри",
+        "ua_short": "Езд."
+    },
+    "neh": {
+        "en_short": "Neh",
+        "en_long": "Nehemiah",
+        "ua_full": "Книга Неємії",
+        "ua_short": "Неєм."
+    },
+    "esth": {
+        "en_short": "Esth",
+        "en_long": "Esther",
+        "ua_full": "Книга Естери",
+        "ua_short": "Ест."
+    },
+    "job": {
+        "en_short": "Job",
+        "en_long": "Job",
+        "ua_full": "Книга Йова",
+        "ua_short": "Йов"
+    },
+    "ps": {
+        "en_short": "Pss",
+        "en_long": "Psalms",
+        "ua_full": "Псалмів",
+        "ua_short": "Пс."
+    },
+    "prov": {
+        "en_short": "Prov",
+        "en_long": "Proverbs",
+        "ua_full": "Книга Приповістей Соломонових (Приповідок)",
+        "ua_short": "Пр."
+    },
+    "eccl": {
+        "en_short": "Eccl",
+        "en_long": "Ecclesiastes",
+        "ua_full": "Книга Екклезіястова, або Проповідника",
+        "ua_short": "Еккл."
+    },
+    "song": {
+        "en_short": "Song",
+        "en_long": "Song of Songs",
+        "ua_full": "Пісні Пісень <span>(Пісня над піснями Соломона)</span>",
+        "ua_short": "Пісн."
+    },
+    "isa": {
+        "en_short": "Isa",
+        "en_long": "Isaiah",
+        "ua_full": "Книга пророка Ісаї",
+        "ua_short": "Іс."
+    },
+    "jer": {
+        "en_short": "Jer",
+        "en_long": "Jeremiah",
+        "ua_full": "Книга пророка Єремії",
+        "ua_short": "Єр."
+    },
+    "lam": {
+        "en_short": "Lam",
+        "en_long": "Lamentations",
+        "ua_full": "Плач Єремії",
+        "ua_short": "Плач"
+    },
+    "ezek": {
+        "en_short": "Ezek",
+        "en_long": "Ezekiel",
+        "ua_full": "Книга пророка Єзекиїла (Єзакіїля)",
+        "ua_short": "Єз."
+    },
+    "dan": {
+        "en_short": "Dan",
+        "en_long": "Daniel",
+        "ua_full": "Книга пророка Даниїла",
+        "ua_short": "Дан."
+    },
+    "hos": {
+        "en_short": "Hos",
+        "en_long": "Hosea",
+        "ua_full": "Книга пророка Осії",
+        "ua_short": "Ос."
+    },
+    "joel": {
+        "en_short": "Joel",
+        "en_long": "Joel",
+        "ua_full": "Книга пророка Йоіла",
+        "ua_short": "Йоїл"
+    },
+    "amos": {
+        "en_short": "Amos",
+        "en_long": "Amos",
+        "ua_full": "Книга пророка Амоса",
+        "ua_short": "Ам."
+    },
+    "obad": {
+        "en_short": "Obad",
+        "en_long": "Obadiah",
+        "ua_full": "Книга пророка Овдія",
+        "ua_short": "Ов."
+    },
+    "jonah": {
+        "en_short": "Jonah",
+        "en_long": "Jonah",
+        "ua_full": "Книга пророка Йони",
+        "ua_short": "Йона"
+    },
+    "mic": {
+        "en_short": "Mic",
+        "en_long": "Micah",
+        "ua_full": "Книга пророка Михея",
+        "ua_short": "Мих."
+    },
+    "nah": {
+        "en_short": "Nah",
+        "en_long": "Nahum",
+        "ua_full": "Книга пророка Наума",
+        "ua_short": "Наум"
+    },
+    "hab": {
+        "en_short": "Hab",
+        "en_long": "Habakkuk",
+        "ua_full": "Книга пророка Авакума",
+        "ua_short": "Ав."
+    },
+    "zeph": {
+        "en_short": "Zeph",
+        "en_long": "Zephaniah",
+        "ua_full": "Книга пророка Софонії",
+        "ua_short": "Соф."
+    },
+    "hag": {
+        "en_short": "Hag",
+        "en_long": "Haggai",
+        "ua_full": "Книга пророка Огія (Аггея)",
+        "ua_short": "Ог."
+    },
+    "zech": {
+        "en_short": "Zech",
+        "en_long": "Zechariah",
+        "ua_full": "Книга пророка Захарії",
+        "ua_short": "Зах."
+    },
+    "mal": {
+        "en_short": "Mal",
+        "en_long": "Malachi",
+        "ua_full": "Книга пророка Малахії",
+        "ua_short": "Мал."
+    },
+    "matt": {
+        "en_short": "Matt",
+        "en_long": "Matthew",
+        "ua_full": "Євангеліє від св. Матвія",
+        "ua_short": "Мт."
+    },
+    "mark": {
+        "en_short": "Mark",
+        "en_long": "Mark",
+        "ua_full": "Євангеліє від св. Марка",
+        "ua_short": "Мр."
+    },
+    "luke": {
+        "en_short": "Luke",
+        "en_long": "Luke",
+        "ua_full": "Євангеліє від св. Луки",
+        "ua_short": "Лк."
+    },
+    "john": {
+        "en_short": "John",
+        "en_long": "John",
+        "ua_full": "Євангеліє від св. Йоана",
+        "ua_short": "Ів."
+    },
+    "acts": {
+        "en_short": "Acts",
+        "en_long": "Acts",
+        "ua_full": "Дії святих апостолів",
+        "ua_short": "Діяння"
+    },
+    "rom": {
+        "en_short": "Rom",
+        "en_long": "Romans",
+        "ua_full": "Послання св. апостола Павла до римлян",
+        "ua_short": "Рим."
+    },
+    "1cor": {
+        "en_short": "1 Cor",
+        "en_long": "1 Corinthians",
+        "ua_full": "Перше послання апостола Павла до коринтян",
+        "ua_short": "1 Кор."
+    },
+    "2cor": {
+        "en_short": "2 Cor",
+        "en_long": "2 Corinthians",
+        "ua_full": "Друге послання апостола Павла до коринтян",
+        "ua_short": "2 Кор."
+    },
+    "gal": {
+        "en_short": "Gal",
+        "en_long": "Galatians",
+        "ua_full": "Послання св. апостола Павла до галатів",
+        "ua_short": "Гал."
+    },
+    "eph": {
+        "en_short": "Eph",
+        "en_long": "Ephesians",
+        "ua_full": "Послання св. апостола Павла до ефесян",
+        "ua_short": "Еф."
+    },
+    "phil": {
+        "en_short": "Phil",
+        "en_long": "Philippians",
+        "ua_full": "Послання св. апостола Павла до филип'ян",
+        "ua_short": "Фил."
+    },
+    "col": {
+        "en_short": "Col",
+        "en_long": "Colossians",
+        "ua_full": "Послання св. апостола Павла до колосян",
+        "ua_short": "Кол."
+    },
+    "1thess": {
+        "en_short": "1 Thess",
+        "en_long": "1 Thessalonians",
+        "ua_full": "Перше послання св. апостола Павла до солунян",
+        "ua_short": "1 Сол."
+    },
+    "2thess": {
+        "en_short": "2 Thess",
+        "en_long": "2 Thessalonians",
+        "ua_full": "Друге послання св. апостола Павла до солунян",
+        "ua_short": "2 Сол."
+    },
+    "1tim": {
+        "en_short": "1 Tim",
+        "en_long": "1 Timothy",
+        "ua_full": "Перше послання св. апостола Павла до Ти­мофія",
+        "ua_short": "1 Тим."
+    },
+    "2tim": {
+        "en_short": "2 Tim",
+        "en_long": "2 Timothy",
+        "ua_full": "Друге послання св. апостола Павла до Ти­мофія",
+        "ua_short": "2 Тим."
+    },
+    "titus": {
+        "en_short": "Titus",
+        "en_long": "Titus",
+        "ua_full": "Послання св. апостола Павла до Тита",
+        "ua_short": "Тит"
+    },
+    "phlm": {
+        "en_short": "Phlm",
+        "en_long": "Philemon",
+        "ua_full": "Послання св. апостола Павла до Филимона",
+        "ua_short": "Филим."
+    },
+    "heb": {
+        "en_short": "Heb",
+        "en_long": "Hebrews",
+        "ua_full": "Послання до євреїв",
+        "ua_short": "Євр."
+    },
+    "jas": {
+        "en_short": "Jas",
+        "en_long": "James",
+        "ua_full": "Соборне послання св. апостола Якова",
+        "ua_short": "Як."
+    },
+    "1pet": {
+        "en_short": "1 Pet",
+        "en_long": "1 Peter",
+        "ua_full": "Перше соборне послання св. апостола Петра",
+        "ua_short": "1 Петр."
+    },
+    "2pet": {
+        "en_short": "2 Pet",
+        "en_long": "2 Peter",
+        "ua_full": "Друге соборне послання св. апостола Петра",
+        "ua_short": "2 Петр."
+    },
+    "1john": {
+        "en_short": "1 John",
+        "en_long": "1 John",
+        "ua_full": "Перше соборне послання св. апостола Йоана",
+        "ua_short": "1 Ів."
+    },
+    "2john": {
+        "en_short": "2 John",
+        "en_long": "2 John",
+        "ua_full": "Друге соборне послання св. апостола Йоана",
+        "ua_short": "2 Ів."
+    },
+    "3john": {
+        "en_short": "3 John",
+        "en_long": "3 John",
+        "ua_full": "Третє соборне послання св. апостола Йоана",
+        "ua_short": "З Ів."
+    },
+    "jude": {
+        "en_short": "Jude",
+        "en_long": "Jude",
+        "ua_full": "Соборне послання св. апостола Юди",
+        "ua_short": "Юд."
+    },
+    "rev": {
+        "en_short": "Rev",
+        "en_long": "Revelation",
+        "ua_full": "Об'явлення св. Йоана Богослова",
+        "ua_short": "Об."
+    }
+}

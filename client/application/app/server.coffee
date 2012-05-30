@@ -77,12 +77,12 @@ define ->
     
     bookTopReached: =>
       data =
-        verses: @_getTestData 100
+        verses: @_getTestData()
         prepend: yes
       $.publish 'server/data_loaded', data
     
     bookBottomReached: =>
       data =
-        verses: @_getTestData 100
+        verses: @_getTestData()
         append: yes
       $.publish 'server/data_loaded', data
