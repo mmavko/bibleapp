@@ -14,4 +14,4 @@ define [
       server = new Server
       book.init()
       server.init()
-      $.publish 'toc/goto_verse'
+      $.publish 'toc/goto_verse', target: 'john3:16'

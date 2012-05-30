@@ -3,6 +3,11 @@
   <% if (verse.target) { %>
     <div class="target"></div>
   <% } %>
+  <% if (verse.titles) for (var j=0; j<verse.titles.length; j++) {%>
+    <% var title = verse.titles[j]; %>
+    <% var tag = 'h'+title.level; %>
+    <h<%= title.level %>><%= title.t %></h<%= title.level %>>
+  <% } %>
   <% if (verse.v === 1) { %>
     <div class="c"><%= verse.c %></div>
   <% } %>

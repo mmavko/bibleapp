@@ -7,34 +7,52 @@
 }
 
 #book .verses {
+  padding-top: 1px;
   width: 350px;
   margin: 0 auto;
+}
+
+#book h1, #book h2, #book h3, #book h4, #book h5 {
+  text-align: center;
+}
+#book h1 span, #book h2 span, #book h3 span, #book h4 span, #book h5 span {
+  display: block;
+  font-weight: normal;
+}
+#book h1      { font-size: 40px; }
+#book h1 span { font-size: 18px; font-style: italic; }
+#book h2      { font-size: 34px; font-weight: normal; }
+#book h2 span { font-size: 18px; }
+#book h3      { font-size: 28px; }
+#book h3 span { font-size: 20px; }
+#book h4      { font-size: 16px; }
+#book h4 span { font-size: 16px; }
+#book h5      { font-size: 16px; }
+#book h5 span { font-size: 16px; }
+
+#book .v {
   padding: 0 10px;
   border: 1px solid #aaa;
   border-width: 0 1px;
 }
 
-#book h2 {
-  text-align: center;
+#book .v.last {
+  padding-bottom: 20px;
 }
 
 #book .c {
   float: left;
-  margin-left: 5px;
-  margin-right: 10px;
+  margin: 0 10px;
   font-size: 36px;
   line-height: 36px;
   font-weight: bold;
 }
 
-#book .c, #book .c + .v {
-  margin-top: 20px;
-}
-
 #book .v .n {
-  margin: 0 8px;
-  position: relative;
-  top: -3px;
+  float: left;
+  width: 18px;
+  margin-right: 8px;
+  text-align: right;
   font-size: 70%;
   font-style: italic;
   font-family: sans-serif;

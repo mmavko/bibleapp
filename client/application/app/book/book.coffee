@@ -20,7 +20,7 @@ define [
   
     class Book extends Controller
       
-      TARGET_TOP_OFFSET: 20
+      TARGET_TOP_OFFSET: 0
       LOAD_MARGIN: 600
       
       elements:
@@ -53,14 +53,20 @@ define [
         $.publish 'book/top_reached'    if @_measureTopScrollSpace()    < @LOAD_MARGIN
         $.publish 'book/bottom_reached' if @_measureBottomScrollSpace() < @LOAD_MARGIN
       
+      _refreshDOM: () ->
+        $('.verses .c').prev('.v').addClass 'last'
+        @refreshElements()
+      
       data_loaded: (ev, data) =>
         if data.reload
           @versesEl.html @versesTmpl data
-          @refreshElements()
+          @_refreshDOM()
           @_scrollToTarget()
         if data.append
           @versesEl.append @versesTmpl data
+          @_refreshDOM()
         if data.prepend
           oldHeight = @versesEl.height()
           @versesEl.prepend @versesTmpl data
+          @_refreshDOM()
           @el.scrollTop @el.scrollTop() + @versesEl.height() - oldHeight
