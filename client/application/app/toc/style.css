@@ -1,0 +1,37 @@
+
+#toc {
+  width: 450px;
+  /* height = window.innerHeight - margins (in JS) */
+  position: fixed;
+  overflow-y: scroll;
+  margin: 30px;
+  color: #666;
+  box-sizing: border-box;
+  border: 1px solid #E3DFC3;
+  box-shadow: 0 0 30px 6px #E3DFC5, inset 0 0 10px 0 #E3DFC5;
+}
+
+#toc .books {
+  margin: 0 10px 30px;
+}
+
+#toc h2 {
+  text-align: center;
+}
+
+#toc h3 {
+  margin: 10px;
+}
+
+#toc h4 {
+  margin: 10px 20px 5px;
+  font-style: italic;
+}
+
+#toc .book {
+  margin-left: 20px;
+}
+#toc .book:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

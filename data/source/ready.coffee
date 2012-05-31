@@ -31,11 +31,11 @@ for chapter in bible_source
     if verse.b is 'gen' and verse.c is 1 and verse.v is 1
       titles.push
         level: 2
-        t: 'Старий заповіт'
+        t: 'СТАРИЙ ЗАПОВІТ'
     if verse.b is 'matt' and verse.c is 1 and verse.v is 1
       titles.push
         level: 2
-        t: 'Новий заповіт <span>нашого Господа і спасителя Ісуса Христа</span>'
+        t: 'НОВИЙ ЗАПОВІТ <span>нашого Господа і спасителя Ісуса Христа</span>'
     if verse.c is 1 and verse.v is 1
       titles.push
         level: 3

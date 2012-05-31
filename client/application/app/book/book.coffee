@@ -42,7 +42,7 @@ define [
       init: ->
         @mainTmpl = tmpl mainTmpl
         @versesTmpl = tmpl versesTmpl
-        $(window).resize @_adjustHeight
+        $.subscribe 'page/resize', @_adjustHeight
         @_adjustHeight()
         @el.scroll @onScroll.debounce 200
         @el.html @mainTmpl {}

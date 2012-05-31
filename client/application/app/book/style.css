@@ -9,7 +9,7 @@
 #book .verses {
   padding-top: 1px;
   width: 350px;
-  margin: 0 auto;
+  margin-left: 570px;
 }
 
 #book h1, #book h2, #book h3, #book h4, #book h5 {
@@ -20,11 +20,11 @@
   font-weight: normal;
 }
 #book h1      { font-size: 40px; }
-#book h1 span { font-size: 18px; font-style: italic; }
-#book h2      { font-size: 34px; font-weight: normal; }
+#book h1 span { font-size: 20px; font-weight: normal; font-style: italic; }
+#book h2      { font-size: 28px; font-weight: normal; margin: 32px 0; }
 #book h2 span { font-size: 18px; }
-#book h3      { font-size: 28px; }
-#book h3 span { font-size: 20px; }
+#book h3      { font-size: 32px; }
+#book h3 span { font-size: 24px; }
 #book h4      { font-size: 16px; }
 #book h4 span { font-size: 16px; }
 #book h5      { font-size: 16px; }
@@ -42,10 +42,12 @@
 
 #book .c {
   float: left;
-  margin: 0 10px;
-  font-size: 36px;
-  line-height: 36px;
+  margin-left: 12px;
+  margin-right: 8px;
+  font-size: 42px;
+  line-height: 46px;
   font-weight: bold;
+  font-family: 'Times New Roman', serif;
 }
 
 #book .v .n {
@@ -53,9 +55,10 @@
   width: 18px;
   margin-right: 8px;
   text-align: right;
-  font-size: 70%;
+  line-height: 20px;
+  font-size: 13px;
   font-style: italic;
-  font-family: sans-serif;
+  font-family: Helvetica, sans-serif;
 }
 
 #book .c + .v .n {
