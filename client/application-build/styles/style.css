@@ -15,6 +15,7 @@ body {
   padding-top: 1px;
   width: 350px;
   margin-left: 570px;
+  margin-bottom: 50px;
 }
 #book h1, #book h2, #book h3, #book h4, #book h5 {
   text-align: center;
