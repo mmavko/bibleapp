@@ -50,39 +50,53 @@
 
 
 define ->
+  
 
   class Server
+    
+    API_URL: 'http://127.0.0.1:8888/api'
+    PART_SIZE: 50
     
     init: ->
       $.subscribe 'toc/goto_verse', @tocGotoVerse
       $.subscribe 'book/top_reached', @bookTopReached
       $.subscribe 'book/bottom_reached', @bookBottomReached
     
-    _getTestData: (number=100, book='gen', chapter=1) ->
-      verses = []
-      for i in [1..number]
-        verses.push
-          b: book
-          c: chapter
-          v: i
-          t: "Verse text for verse number #{i} of book '#{book}#{chapter}' and some more text."
-      verses
+    _loadData: (params) ->
+      if params.reload
+        @prependCount = @appendCount = 0
+        @beginningReached = @endReached = no
+        @currentTargetVerse = params.target
+        start = -@PART_SIZE
+        end   = 2 * @PART_SIZE
+      else if params.prepend
+        return if @beginningReached
+        start = -(@prependCount + 2) * @PART_SIZE
+        end   = -(@prependCount + 1) * @PART_SIZE
+      else if params.append
+        return if @endReached
+        start = (@appendCount + 2) * @PART_SIZE
+        end   = (@appendCount + 3) * @PART_SIZE
+      requestData =
+        target: @currentTargetVerse
+        start: start
+        end: end
+      $.getJSON @API_URL, requestData, (responseData) =>
+        @prependCount++ if params.prepend
+        @appendCount++  if params.append
+        @beginningReached = yes if responseData.beginningReached
+        @endReached       = yes if responseData.endReached
+        params.verses = responseData.verses
+        $.publish 'server/data_loaded', params
     
-    tocGotoVerse: =>
-      data =
-        verses: @_getTestData 100
-        reload: yes
-      data.verses[39].target = yes
-      $.publish 'server/data_loaded', data
+    tocGotoVerse: (ev, data) =>
+      data.reload = yes
+      @_loadData data
     
-    bookTopReached: =>
-      data =
-        verses: @_getTestData 100
-        prepend: yes
-      $.publish 'server/data_loaded', data
+    bookTopReached: (ev, data = {}) =>
+      data.prepend = yes
+      @_loadData data
     
-    bookBottomReached: =>
-      data =
-        verses: @_getTestData 100
-        append: yes
-      $.publish 'server/data_loaded', data
+    bookBottomReached: (ev, data = {}) =>
+      data.append = yes
+      @_loadData data

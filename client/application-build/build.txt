@@ -3,6 +3,10 @@ app/book/style.css
 ----------------
 app/book/style.css
 
+app/toc/style.css
+----------------
+app/toc/style.css
+
 styles/main.css
 ----------------
 styles/main.css
@@ -11,6 +15,7 @@ styles/style.css
 ----------------
 styles/main.css
 styles/../app/book/style.css
+styles/../app/toc/style.css
 styles/style.css
 
 scripts/main.js
@@ -21,10 +26,14 @@ scripts/text.js
 text!app/book/template.micro
 text!app/book/verses.micro
 cs!app/book/book
-cs!app/toc
+text!app/toc/books.json
+text!app/toc/template.micro
+text!app/toc/books.micro
+cs!app/toc/toc
 cs!app/server
 cs!app/index
 lib/jquery.xxspubsub.js
 lib/tmpl.js
 lib/debounce.js
+lib/prefixfree.js
 scripts/main.js

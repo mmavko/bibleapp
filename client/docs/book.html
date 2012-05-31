@@ -21,8 +21,8 @@
   
     <span class="k">class</span> <span class="nx">Book</span> <span class="k">extends</span> <span class="nx">Controller</span>
       
-      <span class="nv">tagetTopOffset: </span><span class="mi">20</span>
-      <span class="nv">loadMargin: </span><span class="mi">600</span>
+      <span class="nv">TARGET_TOP_OFFSET: </span><span class="mi">0</span>
+      <span class="nv">LOAD_MARGIN: </span><span class="mi">600</span>
       
       <span class="nv">elements:</span>
         <span class="nv">versesEl: </span><span class="s">&#39;.verses&#39;</span>
@@ -32,7 +32,7 @@
         <span class="nx">@el</span><span class="p">.</span><span class="nx">height</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span>
       
       <span class="nv">_scrollToTarget: </span><span class="o">-&gt;</span>
-        <span class="nx">@el</span><span class="p">.</span><span class="nx">scrollTop</span> <span class="nx">@el</span><span class="p">.</span><span class="nx">scrollTop</span><span class="p">()</span><span class="o">+</span><span class="nx">@targetEl</span><span class="p">.</span><span class="nx">position</span><span class="p">().</span><span class="nx">top</span><span class="o">-</span><span class="nx">@tagetTopOffset</span>
+        <span class="nx">@el</span><span class="p">.</span><span class="nx">scrollTop</span> <span class="nx">@el</span><span class="p">.</span><span class="nx">scrollTop</span><span class="p">()</span> <span class="o">+</span> <span class="nx">@targetEl</span><span class="p">.</span><span class="nx">position</span><span class="p">().</span><span class="nx">top</span> <span class="o">-</span> <span class="nx">@TARGET_TOP_OFFSET</span>
       
       <span class="nv">_measureTopScrollSpace: </span><span class="o">-&gt;</span>
         <span class="nx">@el</span><span class="p">.</span><span class="nx">scrollTop</span><span class="p">()</span>
@@ -43,7 +43,7 @@
       <span class="nv">init: </span><span class="o">-&gt;</span>
         <span class="vi">@mainTmpl = </span><span class="nx">tmpl</span> <span class="nx">mainTmpl</span>
         <span class="vi">@versesTmpl = </span><span class="nx">tmpl</span> <span class="nx">versesTmpl</span>
-        <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">resize</span> <span class="nx">@_adjustHeight</span>
+        <span class="nx">$</span><span class="p">.</span><span class="nx">subscribe</span> <span class="s">&#39;page/resize&#39;</span><span class="p">,</span> <span class="nx">@_adjustHeight</span>
         <span class="nx">@_adjustHeight</span><span class="p">()</span>
         <span class="nx">@el</span><span class="p">.</span><span class="nx">scroll</span> <span class="nx">@onScroll</span><span class="p">.</span><span class="nx">debounce</span> <span class="mi">200</span>
         <span class="nx">@el</span><span class="p">.</span><span class="nx">html</span> <span class="nx">@mainTmpl</span> <span class="p">{}</span>
@@ -51,19 +51,25 @@
         <span class="nx">$</span><span class="p">.</span><span class="nx">subscribe</span> <span class="s">&#39;server/data_loaded&#39;</span><span class="p">,</span> <span class="nx">@data_loaded</span>
       
       <span class="nv">onScroll: </span><span class="o">=&gt;</span>
-        <span class="nx">$</span><span class="p">.</span><span class="nx">publish</span> <span class="s">&#39;book/top_reached&#39;</span>    <span class="k">if</span> <span class="nx">@_measureTopScrollSpace</span><span class="p">()</span>    <span class="o">&lt;</span> <span class="nx">@loadMargin</span>
-        <span class="nx">$</span><span class="p">.</span><span class="nx">publish</span> <span class="s">&#39;book/bottom_reached&#39;</span> <span class="k">if</span> <span class="nx">@_measureBottomScrollSpace</span><span class="p">()</span> <span class="o">&lt;</span> <span class="nx">@loadMargin</span>
+        <span class="nx">$</span><span class="p">.</span><span class="nx">publish</span> <span class="s">&#39;book/top_reached&#39;</span>    <span class="k">if</span> <span class="nx">@_measureTopScrollSpace</span><span class="p">()</span>    <span class="o">&lt;</span> <span class="nx">@LOAD_MARGIN</span>
+        <span class="nx">$</span><span class="p">.</span><span class="nx">publish</span> <span class="s">&#39;book/bottom_reached&#39;</span> <span class="k">if</span> <span class="nx">@_measureBottomScrollSpace</span><span class="p">()</span> <span class="o">&lt;</span> <span class="nx">@LOAD_MARGIN</span>
+      
+      <span class="nv">_refreshDOM: </span><span class="nf">() -&gt;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s">&#39;.verses .c&#39;</span><span class="p">).</span><span class="nx">prev</span><span class="p">(</span><span class="s">&#39;.v&#39;</span><span class="p">).</span><span class="nx">addClass</span> <span class="s">&#39;last&#39;</span>
+        <span class="nx">@refreshElements</span><span class="p">()</span>
       
       <span class="nv">data_loaded: </span><span class="p">(</span><span class="nx">ev</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span>
         <span class="k">if</span> <span class="nx">data</span><span class="p">.</span><span class="nx">reload</span>
           <span class="nx">@versesEl</span><span class="p">.</span><span class="nx">html</span> <span class="nx">@versesTmpl</span> <span class="nx">data</span>
-          <span class="nx">@refreshElements</span><span class="p">()</span>
+          <span class="nx">@_refreshDOM</span><span class="p">()</span>
           <span class="nx">@_scrollToTarget</span><span class="p">()</span>
         <span class="k">if</span> <span class="nx">data</span><span class="p">.</span><span class="nx">append</span>
           <span class="nx">@versesEl</span><span class="p">.</span><span class="nx">append</span> <span class="nx">@versesTmpl</span> <span class="nx">data</span>
+          <span class="nx">@_refreshDOM</span><span class="p">()</span>
         <span class="k">if</span> <span class="nx">data</span><span class="p">.</span><span class="nx">prepend</span>
           <span class="nv">oldHeight = </span><span class="nx">@versesEl</span><span class="p">.</span><span class="nx">height</span><span class="p">()</span>
           <span class="nx">@versesEl</span><span class="p">.</span><span class="nx">prepend</span> <span class="nx">@versesTmpl</span> <span class="nx">data</span>
+          <span class="nx">@_refreshDOM</span><span class="p">()</span>
           <span class="nx">@el</span><span class="p">.</span><span class="nx">scrollTop</span> <span class="nx">@el</span><span class="p">.</span><span class="nx">scrollTop</span><span class="p">()</span> <span class="o">+</span> <span class="nx">@versesEl</span><span class="p">.</span><span class="nx">height</span><span class="p">()</span> <span class="o">-</span> <span class="nx">oldHeight</span>
 
 </pre></div>             </td>           </tr>                </tbody>     </table>   </div> </body> </html> 

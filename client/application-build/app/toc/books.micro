@@ -1,0 +1,8 @@
+<% for (var book_id in books) { %>
+  <% var book = books[book_id]; %>
+  <% if (book.titles) for (var j=0; j<book.titles.length; j++) {%>
+    <% var title = book.titles[j]; %>
+    <h<%= title.level %>><%= title.t %></h<%= title.level %>>
+  <% } %>
+  <div class="book" data-target="<%= book_id %>"><%= book.ua_full %></div>
+<% } %>

@@ -52,41 +52,55 @@ Negative values should also be supported.</p>
 <li><code>book/top_reached</code> -- fires <code>data_loaded</code></li>
 <li><code>book/bottom_reached</code> -- fires <code>data_loaded</code></li>
 </ul>             </td>             <td class="code">               <div class="highlight"><pre><span class="nx">define</span> <span class="o">-&gt;</span>
+  
 
   <span class="k">class</span> <span class="nx">Server</span>
+    
+    <span class="nv">API_URL: </span><span class="s">&#39;http://127.0.0.1:8888/api&#39;</span>
+    <span class="nv">PART_SIZE: </span><span class="mi">50</span>
     
     <span class="nv">init: </span><span class="o">-&gt;</span>
       <span class="nx">$</span><span class="p">.</span><span class="nx">subscribe</span> <span class="s">&#39;toc/goto_verse&#39;</span><span class="p">,</span> <span class="nx">@tocGotoVerse</span>
       <span class="nx">$</span><span class="p">.</span><span class="nx">subscribe</span> <span class="s">&#39;book/top_reached&#39;</span><span class="p">,</span> <span class="nx">@bookTopReached</span>
       <span class="nx">$</span><span class="p">.</span><span class="nx">subscribe</span> <span class="s">&#39;book/bottom_reached&#39;</span><span class="p">,</span> <span class="nx">@bookBottomReached</span>
     
-    <span class="nv">_getTestData: </span><span class="nf">(number=100, book=&#39;gen&#39;, chapter=1) -&gt;</span>
-      <span class="nv">verses = </span><span class="p">[]</span>
-      <span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">..</span><span class="nx">number</span><span class="p">]</span>
-        <span class="nx">verses</span><span class="p">.</span><span class="nx">push</span>
-          <span class="nv">b: </span><span class="nx">book</span>
-          <span class="nv">c: </span><span class="nx">chapter</span>
-          <span class="nv">v: </span><span class="nx">i</span>
-          <span class="nv">t: </span><span class="s">&quot;Verse text for verse number </span><span class="si">#{</span><span class="nx">i</span><span class="si">}</span><span class="s"> of book &#39;</span><span class="si">#{</span><span class="nx">book</span><span class="si">}#{</span><span class="nx">chapter</span><span class="si">}</span><span class="s">&#39; and some more text.&quot;</span>
-      <span class="nx">verses</span>
+    <span class="nv">_loadData: </span><span class="nf">(params) -&gt;</span>
+      <span class="k">if</span> <span class="nx">params</span><span class="p">.</span><span class="nx">reload</span>
+        <span class="vi">@prependCount = @appendCount = </span><span class="mi">0</span>
+        <span class="vi">@beginningReached = @endReached = </span><span class="kc">no</span>
+        <span class="vi">@currentTargetVerse = </span><span class="nx">params</span><span class="p">.</span><span class="nx">target</span>
+        <span class="nv">start = </span><span class="o">-</span><span class="nx">@PART_SIZE</span>
+        <span class="nv">end   = </span><span class="mi">2</span> <span class="o">*</span> <span class="nx">@PART_SIZE</span>
+      <span class="k">else</span> <span class="k">if</span> <span class="nx">params</span><span class="p">.</span><span class="nx">prepend</span>
+        <span class="k">return</span> <span class="k">if</span> <span class="nx">@beginningReached</span>
+        <span class="nv">start = </span><span class="o">-</span><span class="p">(</span><span class="nx">@prependCount</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="nx">@PART_SIZE</span>
+        <span class="nv">end   = </span><span class="o">-</span><span class="p">(</span><span class="nx">@prependCount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="nx">@PART_SIZE</span>
+      <span class="k">else</span> <span class="k">if</span> <span class="nx">params</span><span class="p">.</span><span class="nx">append</span>
+        <span class="k">return</span> <span class="k">if</span> <span class="nx">@endReached</span>
+        <span class="nv">start = </span><span class="p">(</span><span class="nx">@appendCount</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="nx">@PART_SIZE</span>
+        <span class="nv">end   = </span><span class="p">(</span><span class="nx">@appendCount</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="nx">@PART_SIZE</span>
+      <span class="nv">requestData =</span>
+        <span class="nv">target: </span><span class="nx">@currentTargetVerse</span>
+        <span class="nv">start: </span><span class="nx">start</span>
+        <span class="nv">end: </span><span class="nx">end</span>
+      <span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span> <span class="nx">@API_URL</span><span class="p">,</span> <span class="nx">requestData</span><span class="p">,</span> <span class="p">(</span><span class="nx">responseData</span><span class="p">)</span> <span class="o">=&gt;</span>
+        <span class="nx">@prependCount</span><span class="o">++</span> <span class="k">if</span> <span class="nx">params</span><span class="p">.</span><span class="nx">prepend</span>
+        <span class="nx">@appendCount</span><span class="o">++</span>  <span class="k">if</span> <span class="nx">params</span><span class="p">.</span><span class="nx">append</span>
+        <span class="vi">@beginningReached = </span><span class="kc">yes</span> <span class="k">if</span> <span class="nx">responseData</span><span class="p">.</span><span class="nx">beginningReached</span>
+        <span class="vi">@endReached       = </span><span class="kc">yes</span> <span class="k">if</span> <span class="nx">responseData</span><span class="p">.</span><span class="nx">endReached</span>
+        <span class="nv">params.verses = </span><span class="nx">responseData</span><span class="p">.</span><span class="nx">verses</span>
+        <span class="nx">$</span><span class="p">.</span><span class="nx">publish</span> <span class="s">&#39;server/data_loaded&#39;</span><span class="p">,</span> <span class="nx">params</span>
     
-    <span class="nv">tocGotoVerse: </span><span class="o">=&gt;</span>
-      <span class="nv">data =</span>
-        <span class="nv">verses: </span><span class="nx">@_getTestData</span> <span class="mi">100</span>
-        <span class="nv">reload: </span><span class="kc">yes</span>
-      <span class="nx">data</span><span class="p">.</span><span class="nx">verses</span><span class="p">[</span><span class="mi">39</span><span class="p">].</span><span class="nv">target = </span><span class="kc">yes</span>
-      <span class="nx">$</span><span class="p">.</span><span class="nx">publish</span> <span class="s">&#39;server/data_loaded&#39;</span><span class="p">,</span> <span class="nx">data</span>
+    <span class="nv">tocGotoVerse: </span><span class="p">(</span><span class="nx">ev</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span>
+      <span class="nv">data.reload = </span><span class="kc">yes</span>
+      <span class="nx">@_loadData</span> <span class="nx">data</span>
     
-    <span class="nv">bookTopReached: </span><span class="o">=&gt;</span>
-      <span class="nv">data =</span>
-        <span class="nv">verses: </span><span class="nx">@_getTestData</span> <span class="mi">100</span>
-        <span class="nv">prepend: </span><span class="kc">yes</span>
-      <span class="nx">$</span><span class="p">.</span><span class="nx">publish</span> <span class="s">&#39;server/data_loaded&#39;</span><span class="p">,</span> <span class="nx">data</span>
+    <span class="nv">bookTopReached: </span><span class="p">(</span><span class="nx">ev</span><span class="p">,</span> <span class="nv">data = </span><span class="p">{})</span> <span class="o">=&gt;</span>
+      <span class="nv">data.prepend = </span><span class="kc">yes</span>
+      <span class="nx">@_loadData</span> <span class="nx">data</span>
     
-    <span class="nv">bookBottomReached: </span><span class="o">=&gt;</span>
-      <span class="nv">data =</span>
-        <span class="nv">verses: </span><span class="nx">@_getTestData</span> <span class="mi">100</span>
-        <span class="nv">append: </span><span class="kc">yes</span>
-      <span class="nx">$</span><span class="p">.</span><span class="nx">publish</span> <span class="s">&#39;server/data_loaded&#39;</span><span class="p">,</span> <span class="nx">data</span>
+    <span class="nv">bookBottomReached: </span><span class="p">(</span><span class="nx">ev</span><span class="p">,</span> <span class="nv">data = </span><span class="p">{})</span> <span class="o">=&gt;</span>
+      <span class="nv">data.append = </span><span class="kc">yes</span>
+      <span class="nx">@_loadData</span> <span class="nx">data</span>
 
 </pre></div>             </td>           </tr>                </tbody>     </table>   </div> </body> </html> 

@@ -1,7 +1,9 @@
 body {
   margin: 0;
   color: #555;
-  background-color: #ffe;
+  background-color: #F5F4D5;
+  font-family: 'EB Garamond', serif;
+  font-size: 18px;
 }
 #book {
   width: 100%;
@@ -10,34 +12,97 @@ body {
   overflow-y: scroll;
 }
 #book .verses {
+  padding-top: 1px;
   width: 350px;
-  margin: 0 auto;
+  margin-left: 570px;
+}
+#book h1, #book h2, #book h3, #book h4, #book h5 {
+  text-align: center;
+}
+#book h1 span, #book h2 span, #book h3 span, #book h4 span, #book h5 span {
+  display: block;
+  font-weight: normal;
+}
+#book h1      { font-size: 40px; }
+#book h1 span { font-size: 20px; font-weight: normal; font-style: italic; }
+#book h2      { font-size: 28px; font-weight: normal; margin: 32px 0; }
+#book h2 span { font-size: 18px; }
+#book h3      { font-size: 32px; }
+#book h3 span { font-size: 24px; }
+#book h4      { font-size: 16px; }
+#book h4 span { font-size: 16px; }
+#book h5      { font-size: 16px; }
+#book h5 span { font-size: 16px; }
+#book .v {
   padding: 0 10px;
   border: 1px solid #aaa;
   border-width: 0 1px;
 }
-#book h2 {
-  text-align: center;
+#book .v.last {
+  padding-bottom: 20px;
 }
 #book .c {
   float: left;
-  margin-left: 5px;
-  margin-right: 10px;
-  font-size: 36px;
-  line-height: 36px;
+  margin-left: 12px;
+  margin-right: 8px;
+  font-size: 42px;
+  line-height: 46px;
   font-weight: bold;
+  font-family: 'Times New Roman', serif;
 }
-#book .c, #book .c + .v {
-  margin-top: 20px;
+#book .c.single-chapter {
+  display: none;
 }
 #book .v .n {
-  margin: 0 8px;
-  position: relative;
-  top: -3px;
-  font-size: 70%;
+  float: left;
+  width: 18px;
+  margin-right: 8px;
+  text-align: right;
+  line-height: 20px;
+  font-size: 13px;
   font-style: italic;
-  font-family: sans-serif;
+  font-family: Helvetica, sans-serif;
 }
 #book .c + .v .n {
   display: none;
+}
+#book .c.single-chapter + .v .n {
+  display: block;
+}
+#toc {
+  width: 450px;
+  
+  position: fixed;
+  overflow-y: scroll;
+  margin: 30px;
+  color: #666;
+  box-sizing: border-box;
+  border: 1px solid #E3DFC3;
+  box-shadow: 0 0 30px 6px #E3DFC5, inset 0 0 10px 0 #E3DFC5;
+}
+#toc .books {
+  margin: 0 10px 30px;
+}
+#toc h2 {
+  text-align: center;
+}
+#toc h3 {
+  margin: 10px;
+}
+#toc h4 {
+  margin: 10px 20px 5px;
+  font-style: italic;
+}
+#toc .book {
+  margin-left: 20px;
+}
+#toc .book:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: normal;
+  src: local('EB Garamond'), local('EBGaramond'), url('./fonts/EBGaramond.woff') format('woff');
 }

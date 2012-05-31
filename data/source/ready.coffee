@@ -41,7 +41,10 @@ for chapter in bible_source
         level: 3
         t: books[verse.b].ua_full
     verse.titles = titles if titles.length > 0
-
+    
+    if verse.c is 1 and verse.v is 1 and books[verse.b].chapters is 1
+      verse.singleChapter = yes
+    
     bible.push verse
 
 fs.writeFileSync './bible.json', JSON.stringify bible

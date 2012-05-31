@@ -50,6 +50,10 @@
   font-family: 'Times New Roman', serif;
 }
 
+#book .c.single-chapter {
+  display: none;
+}
+
 #book .v .n {
   float: left;
   width: 18px;
@@ -63,4 +67,7 @@
 
 #book .c + .v .n {
   display: none;
+}
+#book .c.single-chapter + .v .n {
+  display: block;
 }

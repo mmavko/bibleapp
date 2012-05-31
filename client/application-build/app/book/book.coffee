@@ -20,8 +20,8 @@ define [
   
     class Book extends Controller
       
-      tagetTopOffset: 20
-      loadMargin: 600
+      TARGET_TOP_OFFSET: 0
+      LOAD_MARGIN: 600
       
       elements:
         versesEl: '.verses'
@@ -31,7 +31,7 @@ define [
         @el.height window.innerHeight
       
       _scrollToTarget: ->
-        @el.scrollTop @el.scrollTop()+@targetEl.position().top-@tagetTopOffset
+        @el.scrollTop @el.scrollTop() + @targetEl.position().top - @TARGET_TOP_OFFSET
       
       _measureTopScrollSpace: ->
         @el.scrollTop()
@@ -42,7 +42,7 @@ define [
       init: ->
         @mainTmpl = tmpl mainTmpl
         @versesTmpl = tmpl versesTmpl
-        $(window).resize @_adjustHeight
+        $.subscribe 'page/resize', @_adjustHeight
         @_adjustHeight()
         @el.scroll @onScroll.debounce 200
         @el.html @mainTmpl {}
@@ -50,17 +50,23 @@ define [
         $.subscribe 'server/data_loaded', @data_loaded
       
       onScroll: =>
-        $.publish 'book/top_reached'    if @_measureTopScrollSpace()    < @loadMargin
-        $.publish 'book/bottom_reached' if @_measureBottomScrollSpace() < @loadMargin
+        $.publish 'book/top_reached'    if @_measureTopScrollSpace()    < @LOAD_MARGIN
+        $.publish 'book/bottom_reached' if @_measureBottomScrollSpace() < @LOAD_MARGIN
+      
+      _refreshDOM: () ->
+        $('.verses .c').prev('.v').addClass 'last'
+        @refreshElements()
       
       data_loaded: (ev, data) =>
         if data.reload
           @versesEl.html @versesTmpl data
-          @refreshElements()
+          @_refreshDOM()
           @_scrollToTarget()
         if data.append
           @versesEl.append @versesTmpl data
+          @_refreshDOM()
         if data.prepend
           oldHeight = @versesEl.height()
           @versesEl.prepend @versesTmpl data
+          @_refreshDOM()
           @el.scrollTop @el.scrollTop() + @versesEl.height() - oldHeight
