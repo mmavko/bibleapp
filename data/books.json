@@ -1,398 +1,646 @@
+
 {
     "gen": {
         "en_short": "Gen",
         "en_long": "Genesis",
         "ua_full": "<span>Перша книга Мойсеєва:</span> Буття",
-        "ua_short": "1 М."
+        "ua_short": "1 М.",
+        "titles": [{
+            "level": 2,
+            "t": "Книги Старого Заповіту"
+        }, {
+            "level": 3,
+            "t": "П'ятикнижжя Мойсеєве"
+        }],
+        "n": 1,
+        "n_cath": 1,
+        "chapters": 50
     },
     "exod": {
         "en_short": "Exod",
         "en_long": "Exodus",
         "ua_full": "<span>Друга книга Мойсеєва:</span> Вихід",
-        "ua_short": "2 М."
+        "ua_short": "2 М.",
+        "n": 2,
+        "n_cath": 2,
+        "chapters": 40
     },
     "lev": {
         "en_short": "Lev",
         "en_long": "Leviticus",
         "ua_full": "<span>Третя книга Мойсеєва:</span> Левіт",
-        "ua_short": "З М."
+        "ua_short": "З М.",
+        "n": 3,
+        "n_cath": 3,
+        "chapters": 27
     },
     "num": {
         "en_short": "Num",
         "en_long": "Numbers",
         "ua_full": "<span>Четверта книга Мойсеєва:</span> Числа",
-        "ua_short": "4 М."
+        "ua_short": "4 М.",
+        "n": 4,
+        "n_cath": 4,
+        "chapters": 36
     },
     "deut": {
         "en_short": "Deut",
         "en_long": "Deuteronomy",
         "ua_full": "<span>П'ята книга Мойсеєва:</span> Повторення Закону",
-        "ua_short": "5 М."
+        "ua_short": "5 М.",
+        "n": 5,
+        "n_cath": 5,
+        "chapters": 34
     },
     "josh": {
         "en_short": "Josh",
         "en_long": "Joshua",
         "ua_full": "Книга Ісуса Навина <span>(книга Єгошуї)</span>",
-        "ua_short": "Єг."
+        "ua_short": "Єг.",
+        "titles": [{
+            "level": 3,
+            "t": "Книги історичні"
+        }],
+        "n": 6,
+        "n_cath": 6,
+        "chapters": 24
     },
     "judg": {
         "en_short": "Judg",
         "en_long": "Judges",
         "ua_full": "Книга Суддів",
-        "ua_short": "Суд."
+        "ua_short": "Суд.",
+        "n": 7,
+        "n_cath": 7,
+        "chapters": 21
     },
     "ruth": {
         "en_short": "Ruth",
         "en_long": "Ruth",
         "ua_full": "Книга Рути",
-        "ua_short": "Рут"
+        "ua_short": "Рут",
+        "n": 8,
+        "n_cath": 8,
+        "chapters": 4
     },
     "1sam": {
         "en_short": "1 Sam",
         "en_long": "1 Samuel",
         "ua_full": "Перша книга Самуїла <span>(або Перша книга царів)</span>",
-        "ua_short": "1 Сам."
+        "ua_short": "1 Сам.",
+        "n": 9,
+        "n_cath": 9,
+        "chapters": 31
     },
     "2sam": {
         "en_short": "2 Sam",
         "en_long": "2 Samuel",
         "ua_full": "Друга книга Самуїла <span>(або Друга книга царів)</span>",
-        "ua_short": "2 Сам."
+        "ua_short": "2 Сам.",
+        "n": 10,
+        "n_cath": 10,
+        "chapters": 24
     },
     "1kgs": {
         "en_short": "1 Kgs",
         "en_long": "1 Kings",
         "ua_full": "Перша книга царів",
-        "ua_short": "1 Цар."
+        "ua_short": "1 Цар.",
+        "n": 11,
+        "n_cath": 11,
+        "chapters": 22
     },
     "2kgs": {
         "en_short": "2 Kgs",
         "en_long": "2 Kings",
         "ua_full": "Друга книга царів",
-        "ua_short": "2 Цар."
+        "ua_short": "2 Цар.",
+        "n": 12,
+        "n_cath": 12,
+        "chapters": 25
     },
     "1chr": {
         "en_short": "1 Chr",
         "en_long": "1 Chronicles",
         "ua_full": "Перша книга хроніки",
-        "ua_short": "1 Хр."
+        "ua_short": "1 Хр.",
+        "n": 13,
+        "n_cath": 13,
+        "chapters": 29
     },
     "2chr": {
         "en_short": "2 Chr",
         "en_long": "2 Chronicles",
         "ua_full": "Друга книга хроніки",
-        "ua_short": "2 Хр."
+        "ua_short": "2 Хр.",
+        "n": 14,
+        "n_cath": 14,
+        "chapters": 36
     },
     "ezra": {
         "en_short": "Ezra",
         "en_long": "Ezra",
         "ua_full": "Книга Езри",
-        "ua_short": "Езд."
+        "ua_short": "Езд.",
+        "n": 15,
+        "n_cath": 15,
+        "chapters": 10
     },
     "neh": {
         "en_short": "Neh",
         "en_long": "Nehemiah",
         "ua_full": "Книга Неємії",
-        "ua_short": "Неєм."
+        "ua_short": "Неєм.",
+        "n": 16,
+        "n_cath": 16,
+        "chapters": 13
     },
     "esth": {
         "en_short": "Esth",
         "en_long": "Esther",
         "ua_full": "Книга Естери",
-        "ua_short": "Ест."
+        "ua_short": "Ест.",
+        "n": 17,
+        "n_cath": 17,
+        "chapters": 10
     },
     "job": {
         "en_short": "Job",
         "en_long": "Job",
         "ua_full": "Книга Йова",
-        "ua_short": "Йов"
+        "ua_short": "Йов",
+        "titles": [{
+            "level": 3,
+            "t": "Книги навчальні і поетичні"
+        }],
+        "n": 18,
+        "n_cath": 18,
+        "chapters": 42
     },
     "ps": {
         "en_short": "Pss",
         "en_long": "Psalms",
         "ua_full": "Псалмів",
-        "ua_short": "Пс."
+        "ua_short": "Пс.",
+        "n": 19,
+        "n_cath": 19,
+        "chapters": 150
     },
     "prov": {
         "en_short": "Prov",
         "en_long": "Proverbs",
         "ua_full": "Книга Приповістей Соломонових (Приповідок)",
-        "ua_short": "Пр."
+        "ua_short": "Пр.",
+        "n": 20,
+        "n_cath": 20,
+        "chapters": 31
     },
     "eccl": {
         "en_short": "Eccl",
         "en_long": "Ecclesiastes",
         "ua_full": "Книга Екклезіястова, або Проповідника",
-        "ua_short": "Еккл."
+        "ua_short": "Еккл.",
+        "n": 21,
+        "n_cath": 21,
+        "chapters": 12
     },
     "song": {
         "en_short": "Song",
         "en_long": "Song of Songs",
         "ua_full": "Пісні Пісень <span>(Пісня над піснями Соломона)</span>",
-        "ua_short": "Пісн."
+        "ua_short": "Пісн.",
+        "n": 22,
+        "n_cath": 22,
+        "chapters": 8
     },
     "isa": {
         "en_short": "Isa",
         "en_long": "Isaiah",
         "ua_full": "Книга пророка Ісаї",
-        "ua_short": "Іс."
+        "ua_short": "Іс.",
+        "titles": [{
+            "level": 3,
+            "t": "Книги пророцькі"
+        }, {
+            "level": 4,
+            "t": "Книги великих пророків"
+        }],
+        "n": 23,
+        "n_cath": 23,
+        "chapters": 66
     },
     "jer": {
         "en_short": "Jer",
         "en_long": "Jeremiah",
         "ua_full": "Книга пророка Єремії",
-        "ua_short": "Єр."
+        "ua_short": "Єр.",
+        "n": 24,
+        "n_cath": 24,
+        "chapters": 52
     },
     "lam": {
         "en_short": "Lam",
         "en_long": "Lamentations",
         "ua_full": "Плач Єремії",
-        "ua_short": "Плач"
+        "ua_short": "Плач",
+        "n": 25,
+        "n_cath": 25,
+        "chapters": 5
     },
     "ezek": {
         "en_short": "Ezek",
         "en_long": "Ezekiel",
         "ua_full": "Книга пророка Єзекиїла (Єзакіїля)",
-        "ua_short": "Єз."
+        "ua_short": "Єз.",
+        "n": 26,
+        "n_cath": 26,
+        "chapters": 48
     },
     "dan": {
         "en_short": "Dan",
         "en_long": "Daniel",
         "ua_full": "Книга пророка Даниїла",
-        "ua_short": "Дан."
+        "ua_short": "Дан.",
+        "titles": [{
+            "level": 4,
+            "t": "Книги малих пророків"
+        }],
+        "n": 27,
+        "n_cath": 27,
+        "chapters": 12
     },
     "hos": {
         "en_short": "Hos",
         "en_long": "Hosea",
         "ua_full": "Книга пророка Осії",
-        "ua_short": "Ос."
+        "ua_short": "Ос.",
+        "n": 28,
+        "n_cath": 28,
+        "chapters": 14
     },
     "joel": {
         "en_short": "Joel",
         "en_long": "Joel",
         "ua_full": "Книга пророка Йоіла",
-        "ua_short": "Йоїл"
+        "ua_short": "Йоїл",
+        "n": 29,
+        "n_cath": 29,
+        "chapters": 4
     },
     "amos": {
         "en_short": "Amos",
         "en_long": "Amos",
         "ua_full": "Книга пророка Амоса",
-        "ua_short": "Ам."
+        "ua_short": "Ам.",
+        "n": 30,
+        "n_cath": 30,
+        "chapters": 9
     },
     "obad": {
         "en_short": "Obad",
         "en_long": "Obadiah",
         "ua_full": "Книга пророка Овдія",
-        "ua_short": "Ов."
+        "ua_short": "Ов.",
+        "n": 31,
+        "n_cath": 31,
+        "chapters": 1
     },
     "jonah": {
         "en_short": "Jonah",
         "en_long": "Jonah",
         "ua_full": "Книга пророка Йони",
-        "ua_short": "Йона"
+        "ua_short": "Йона",
+        "n": 32,
+        "n_cath": 32,
+        "chapters": 4
     },
     "mic": {
         "en_short": "Mic",
         "en_long": "Micah",
         "ua_full": "Книга пророка Михея",
-        "ua_short": "Мих."
+        "ua_short": "Мих.",
+        "n": 33,
+        "n_cath": 33,
+        "chapters": 7
     },
     "nah": {
         "en_short": "Nah",
         "en_long": "Nahum",
         "ua_full": "Книга пророка Наума",
-        "ua_short": "Наум"
+        "ua_short": "Наум",
+        "n": 34,
+        "n_cath": 34,
+        "chapters": 3
     },
     "hab": {
         "en_short": "Hab",
         "en_long": "Habakkuk",
         "ua_full": "Книга пророка Авакума",
-        "ua_short": "Ав."
+        "ua_short": "Ав.",
+        "n": 35,
+        "n_cath": 35,
+        "chapters": 3
     },
     "zeph": {
         "en_short": "Zeph",
         "en_long": "Zephaniah",
         "ua_full": "Книга пророка Софонії",
-        "ua_short": "Соф."
+        "ua_short": "Соф.",
+        "n": 36,
+        "n_cath": 36,
+        "chapters": 3
     },
     "hag": {
         "en_short": "Hag",
         "en_long": "Haggai",
         "ua_full": "Книга пророка Огія (Аггея)",
-        "ua_short": "Ог."
+        "ua_short": "Ог.",
+        "n": 37,
+        "n_cath": 37,
+        "chapters": 2
     },
     "zech": {
         "en_short": "Zech",
         "en_long": "Zechariah",
         "ua_full": "Книга пророка Захарії",
-        "ua_short": "Зах."
+        "ua_short": "Зах.",
+        "n": 38,
+        "n_cath": 38,
+        "chapters": 14
     },
     "mal": {
         "en_short": "Mal",
         "en_long": "Malachi",
         "ua_full": "Книга пророка Малахії",
-        "ua_short": "Мал."
+        "ua_short": "Мал.",
+        "n": 39,
+        "n_cath": 39,
+        "chapters": 4
     },
     "matt": {
         "en_short": "Matt",
         "en_long": "Matthew",
-        "ua_full": "Євангеліє від св. Матвія",
-        "ua_short": "Мт."
+        "ua_full": "<span>Євангеліє від св.</span> Матвія",
+        "ua_short": "Мт.",
+        "titles": [{
+            "level": 2,
+            "t": "Книги Нового Заповіту"
+        }, {
+            "level": 3,
+            "t": "Чотири Євангелія"
+        }],
+        "n": 40,
+        "n_cath": 40,
+        "chapters": 28
     },
     "mark": {
         "en_short": "Mark",
         "en_long": "Mark",
-        "ua_full": "Євангеліє від св. Марка",
-        "ua_short": "Мр."
+        "ua_full": "<span>Євангеліє від св.</span> Марка",
+        "ua_short": "Мр.",
+        "n": 41,
+        "n_cath": 41,
+        "chapters": 16
     },
     "luke": {
         "en_short": "Luke",
         "en_long": "Luke",
-        "ua_full": "Євангеліє від св. Луки",
-        "ua_short": "Лк."
+        "ua_full": "<span>Євангеліє від св.</span> Луки",
+        "ua_short": "Лк.",
+        "n": 42,
+        "n_cath": 42,
+        "chapters": 24
     },
     "john": {
         "en_short": "John",
         "en_long": "John",
-        "ua_full": "Євангеліє від св. Йоана",
-        "ua_short": "Ів."
+        "ua_full": "<span>Євангеліє від св.</span> Йоана",
+        "ua_short": "Ів.",
+        "n": 43,
+        "n_cath": 43,
+        "chapters": 21
     },
     "acts": {
         "en_short": "Acts",
         "en_long": "Acts",
         "ua_full": "Дії святих апостолів",
-        "ua_short": "Діяння"
+        "ua_short": "Діяння",
+        "titles": [{
+            "level": 3,
+            "t": "Книга історична"
+        }],
+        "n": 44,
+        "n_cath": 44,
+        "chapters": 28
     },
     "rom": {
         "en_short": "Rom",
         "en_long": "Romans",
         "ua_full": "Послання св. апостола Павла до римлян",
-        "ua_short": "Рим."
+        "ua_short": "Рим.",
+        "titles": [{
+            "level": 3,
+            "t": "Послання апостола Павла"
+        }],
+        "n": 45,
+        "n_cath": 52,
+        "chapters": 16
     },
     "1cor": {
         "en_short": "1 Cor",
         "en_long": "1 Corinthians",
         "ua_full": "Перше послання апостола Павла до коринтян",
-        "ua_short": "1 Кор."
+        "ua_short": "1 Кор.",
+        "n": 46,
+        "n_cath": 53,
+        "chapters": 16
     },
     "2cor": {
         "en_short": "2 Cor",
         "en_long": "2 Corinthians",
         "ua_full": "Друге послання апостола Павла до коринтян",
-        "ua_short": "2 Кор."
+        "ua_short": "2 Кор.",
+        "n": 47,
+        "n_cath": 54,
+        "chapters": 13
     },
     "gal": {
         "en_short": "Gal",
         "en_long": "Galatians",
         "ua_full": "Послання св. апостола Павла до галатів",
-        "ua_short": "Гал."
+        "ua_short": "Гал.",
+        "n": 48,
+        "n_cath": 55,
+        "chapters": 6
     },
     "eph": {
         "en_short": "Eph",
         "en_long": "Ephesians",
         "ua_full": "Послання св. апостола Павла до ефесян",
-        "ua_short": "Еф."
+        "ua_short": "Еф.",
+        "n": 49,
+        "n_cath": 56,
+        "chapters": 6
     },
     "phil": {
         "en_short": "Phil",
         "en_long": "Philippians",
         "ua_full": "Послання св. апостола Павла до филип'ян",
-        "ua_short": "Фил."
+        "ua_short": "Фил.",
+        "n": 50,
+        "n_cath": 57,
+        "chapters": 4
     },
     "col": {
         "en_short": "Col",
         "en_long": "Colossians",
         "ua_full": "Послання св. апостола Павла до колосян",
-        "ua_short": "Кол."
+        "ua_short": "Кол.",
+        "n": 51,
+        "n_cath": 58,
+        "chapters": 4
     },
     "1thess": {
         "en_short": "1 Thess",
         "en_long": "1 Thessalonians",
         "ua_full": "Перше послання св. апостола Павла до солунян",
-        "ua_short": "1 Сол."
+        "ua_short": "1 Сол.",
+        "n": 52,
+        "n_cath": 59,
+        "chapters": 5
     },
     "2thess": {
         "en_short": "2 Thess",
         "en_long": "2 Thessalonians",
         "ua_full": "Друге послання св. апостола Павла до солунян",
-        "ua_short": "2 Сол."
+        "ua_short": "2 Сол.",
+        "n": 53,
+        "n_cath": 60,
+        "chapters": 3
     },
     "1tim": {
         "en_short": "1 Tim",
         "en_long": "1 Timothy",
         "ua_full": "Перше послання св. апостола Павла до Ти­мофія",
-        "ua_short": "1 Тим."
+        "ua_short": "1 Тим.",
+        "n": 54,
+        "n_cath": 61,
+        "chapters": 7
     },
     "2tim": {
         "en_short": "2 Tim",
         "en_long": "2 Timothy",
         "ua_full": "Друге послання св. апостола Павла до Ти­мофія",
-        "ua_short": "2 Тим."
+        "ua_short": "2 Тим.",
+        "n": 55,
+        "n_cath": 62,
+        "chapters": 4
     },
     "titus": {
         "en_short": "Titus",
         "en_long": "Titus",
         "ua_full": "Послання св. апостола Павла до Тита",
-        "ua_short": "Тит"
+        "ua_short": "Тит",
+        "n": 56,
+        "n_cath": 63,
+        "chapters": 3
     },
     "phlm": {
         "en_short": "Phlm",
         "en_long": "Philemon",
         "ua_full": "Послання св. апостола Павла до Филимона",
-        "ua_short": "Филим."
+        "ua_short": "Филим.",
+        "n": 57,
+        "n_cath": 64,
+        "chapters": 1
     },
     "heb": {
         "en_short": "Heb",
         "en_long": "Hebrews",
         "ua_full": "Послання до євреїв",
-        "ua_short": "Євр."
+        "ua_short": "Євр.",
+        "n": 58,
+        "n_cath": 65,
+        "chapters": 13
     },
     "jas": {
         "en_short": "Jas",
         "en_long": "James",
         "ua_full": "Соборне послання св. апостола Якова",
-        "ua_short": "Як."
+        "ua_short": "Як.",
+        "titles": [{
+            "level": 3,
+            "t": "Соборні послання"
+        }],
+        "n": 59,
+        "n_cath": 45,
+        "chapters": 5
     },
     "1pet": {
         "en_short": "1 Pet",
         "en_long": "1 Peter",
         "ua_full": "Перше соборне послання св. апостола Петра",
-        "ua_short": "1 Петр."
+        "ua_short": "1 Петр.",
+        "n": 60,
+        "n_cath": 46,
+        "chapters": 5
     },
     "2pet": {
         "en_short": "2 Pet",
         "en_long": "2 Peter",
         "ua_full": "Друге соборне послання св. апостола Петра",
-        "ua_short": "2 Петр."
+        "ua_short": "2 Петр.",
+        "n": 61,
+        "n_cath": 47,
+        "chapters": 3
     },
     "1john": {
         "en_short": "1 John",
         "en_long": "1 John",
         "ua_full": "Перше соборне послання св. апостола Йоана",
-        "ua_short": "1 Ів."
+        "ua_short": "1 Ів.",
+        "n": 62,
+        "n_cath": 48,
+        "chapters": 5
     },
     "2john": {
         "en_short": "2 John",
         "en_long": "2 John",
         "ua_full": "Друге соборне послання св. апостола Йоана",
-        "ua_short": "2 Ів."
+        "ua_short": "2 Ів.",
+        "n": 63,
+        "n_cath": 49,
+        "chapters": 1
     },
     "3john": {
         "en_short": "3 John",
         "en_long": "3 John",
         "ua_full": "Третє соборне послання св. апостола Йоана",
-        "ua_short": "З Ів."
+        "ua_short": "З Ів.",
+        "n": 64,
+        "n_cath": 50,
+        "chapters": 1
     },
     "jude": {
         "en_short": "Jude",
         "en_long": "Jude",
         "ua_full": "Соборне послання св. апостола Юди",
-        "ua_short": "Юд."
+        "ua_short": "Юд.",
+        "n": 65,
+        "n_cath": 51,
+        "chapters": 1
     },
     "rev": {
         "en_short": "Rev",
         "en_long": "Revelation",
         "ua_full": "Об'явлення св. Йоана Богослова",
-        "ua_short": "Об."
+        "ua_short": "Об.",
+        "titles": [{
+            "level": 3,
+            "t": "Книга пророцька"
+        }],
+        "n": 66,
+        "n_cath": 66,
+        "chapters": 22
     }
 }
