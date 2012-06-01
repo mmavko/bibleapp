@@ -54,7 +54,7 @@ define [
         $.publish 'book/bottom_reached' if @_measureBottomScrollSpace() < @LOAD_MARGIN
       
       _refreshDOM: () ->
-        $('.verses .c').prev('.v').addClass 'last'
+        $('.verses .c, .verses .target').prev('.v').addClass 'last'
         @refreshElements()
       
       data_loaded: (ev, data) =>

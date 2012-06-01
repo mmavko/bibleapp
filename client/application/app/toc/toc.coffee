@@ -30,7 +30,7 @@ define [
         booksEl: '.books'
       
       events:
-        'click .book': 'bookClicked'
+        'click .book, .book .chapters span': 'bookClicked'
 
       init: ->
         
@@ -50,8 +50,8 @@ define [
         @el.height window.innerHeight - marginTop - marginBottom
       
       _goto: (verse) ->
-        console.log "toc/goto_verse #{verse}"
         $.publish 'toc/goto_verse', target: verse
       
       bookClicked: (ev) =>
         @_goto $(ev.currentTarget).attr('data-target')
+        ev.stopPropagation()

@@ -4,5 +4,17 @@
     <% var title = book.titles[j]; %>
     <h<%= title.level %>><%= title.t %></h<%= title.level %>>
   <% } %>
-  <div class="book" data-target="<%= book_id %>"><%= book.ua_full %></div>
+  <div class="book" data-target="<%= book_id %>">
+    <%= book.ua_full %>
+    <% if (book.chapters > 1) { %>
+      <div class="chapters">
+        <% for (var ch=1; ch<=book.chapters; ch++) { %>
+          <span data-target="<%= book_id %><%= ch %>"><%= ch %></span>
+          <% if (ch%10 === 0) { %>
+            </br>
+          <% } %>
+        <% } %>
+      </div>
+    <% } %>
+  </div>
 <% } %>
