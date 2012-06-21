@@ -4,6 +4,7 @@ body {
   background-color: #F5F4D5;
   font-family: 'EB Garamond', serif;
   font-size: 18px;
+  overflow: hidden; 
 }
 #book {
   width: 100%;
@@ -82,7 +83,8 @@ body {
   box-shadow: 0 0 30px 6px #E3DFC5, inset 0 0 10px 0 #E3DFC5;
 }
 #toc .books {
-  margin: 0 10px 30px;
+  margin: 0 10px;
+  padding-bottom: 30px;
 }
 #toc h2 {
   text-align: center;
@@ -96,10 +98,39 @@ body {
 }
 #toc .book {
   margin-left: 20px;
+  position: relative;
 }
 #toc .book:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+#toc .book .chapters {
+  display: none;
+  position: absolute;
+  left: 90px;
+  z-index: 10;
+  padding: 5px 10px;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 235);
+  box-shadow: inset 0 0 20px 0 #E3DFC5;
+  cursor: default;
+}
+#toc .book .chapters span {
+  display: block;
+  float: left;
+  width: 20px;
+  text-align: right;
+  margin-right: 8px;
+  font: 14px/26px 'Times New Roman', serif;
+  cursor: pointer;
+}
+#toc .book .chapters span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+#toc .book .chapters br {
+  clear: left;
 }
 @font-face {
   font-family: 'EB Garamond';

@@ -12,7 +12,8 @@
 }
 
 #toc .books {
-  margin: 0 10px 30px;
+  margin: 0 10px;
+  padding-bottom: 30px;
 }
 
 #toc h2 {
@@ -40,15 +41,14 @@
 #toc .book .chapters {
   display: none;
   position: absolute;
-  left: 100px;
+  left: 90px;
   z-index: 10;
   padding: 5px 10px;
   border: 1px solid #aaa;
   border-radius: 10px;
   background-color: rgb(255, 255, 235);
-}
-#toc .book:hover .chapters {
-  display: block;
+  box-shadow: inset 0 0 20px 0 #E3DFC5;
+  cursor: default;
 }
 #toc .book .chapters span {
   display: block;
@@ -57,6 +57,7 @@
   text-align: right;
   margin-right: 8px;
   font: 14px/26px 'Times New Roman', serif;
+  cursor: pointer;
 }
 #toc .book .chapters span:hover {
   text-decoration: underline;

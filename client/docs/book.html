@@ -55,7 +55,7 @@
         <span class="nx">$</span><span class="p">.</span><span class="nx">publish</span> <span class="s">&#39;book/bottom_reached&#39;</span> <span class="k">if</span> <span class="nx">@_measureBottomScrollSpace</span><span class="p">()</span> <span class="o">&lt;</span> <span class="nx">@LOAD_MARGIN</span>
       
       <span class="nv">_refreshDOM: </span><span class="nf">() -&gt;</span>
-        <span class="nx">$</span><span class="p">(</span><span class="s">&#39;.verses .c&#39;</span><span class="p">).</span><span class="nx">prev</span><span class="p">(</span><span class="s">&#39;.v&#39;</span><span class="p">).</span><span class="nx">addClass</span> <span class="s">&#39;last&#39;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s">&#39;.verses .c, .verses .target&#39;</span><span class="p">).</span><span class="nx">prev</span><span class="p">(</span><span class="s">&#39;.v&#39;</span><span class="p">).</span><span class="nx">addClass</span> <span class="s">&#39;last&#39;</span>
         <span class="nx">@refreshElements</span><span class="p">()</span>
       
       <span class="nv">data_loaded: </span><span class="p">(</span><span class="nx">ev</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span>
