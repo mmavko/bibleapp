@@ -128,6 +128,17 @@ http.createServer( (request, response) ->
         targetVerse = utils.clone respond.verses[targetIndex - startIndex]
         targetVerse.target = yes
         respond.verses[targetIndex - startIndex] = targetVerse
+
+      # add fake level 3 title (book name)
+      v = respond.verses[0] = utils.clone respond.verses[0]
+      if not v.titles or v.titles.filter( (t) -> t.level is 3 ).length is 0
+        for i in [(startIndex-1)..0]
+          if bible[i].titles and (tt = bible[i].titles.filter((t) -> t.level is 3)).length > 0
+            title = utils.clone tt[0]
+            title.fake = yes
+            v.titles or= []
+            v.titles.push title
+            break
     
       # success response
       respond200 JSON.stringify respond

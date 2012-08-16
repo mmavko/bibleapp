@@ -5,7 +5,7 @@
   <% } %>
   <% if (verse.titles) for (var j=0; j<verse.titles.length; j++) {%>
     <% var title = verse.titles[j]; %>
-    <h<%= title.level %>><%= title.t %></h<%= title.level %>>
+    <h<%= title.level %> <%= title.fake ? 'class="fake"' : '' %>><%= title.t %></h<%= title.level %>>
   <% } %>
   <% if (verse.v === 1) { %>
     <% var className = verse.singleChapter ? 'c single-chapter' : 'c'; %>
