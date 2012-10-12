@@ -5,7 +5,7 @@
     <h<%= title.level %>><%= title.t %></h<%= title.level %>>
   <% } %>
   <div class="book" data-target="<%= book_id %>">
-    <%= book.ua_full %>
+    <span><%= book.ua_full %></span>
     <% if (book.chapters > 1) { %>
       <div class="chapters">
         <% for (var ch=1; ch<=book.chapters; ch++) { %>

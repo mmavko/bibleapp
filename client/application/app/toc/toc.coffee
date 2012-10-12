@@ -36,7 +36,7 @@ define [
       
       events:
         'click .book, .book .chapters span': 'bookClicked'
-        'mouseenter .book': 'bookMouseover'
+        'mouseenter .book > span': 'bookMouseover'
         'mouseleave .book': 'bookMouseout'
         'mouseenter .book .chapters': 'chaptersMouseover'
         'mouseleave .book .chapters': 'chaptersMouseout'
@@ -69,7 +69,7 @@ define [
         ev.stopPropagation()
       
       bookMouseover: (ev) =>
-        @lastHoveredBook = $ ev.currentTarget
+        @lastHoveredBook = $(ev.currentTarget).parent()
         @showChapters()
       
       bookMouseout: =>
